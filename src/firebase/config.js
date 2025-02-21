@@ -1,6 +1,6 @@
 // Import Firebase SDKs
 import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth"; // ✅ Import authentication
+import { getAuth, GoogleAuthProvider } from "firebase/auth"; // ✅ Import GoogleAuthProvider
 import { getAnalytics } from "firebase/analytics";
 
 // ✅ Firebase configuration
@@ -16,6 +16,7 @@ const firebaseConfig = {
 
 // ✅ Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app); // ✅ Export authentication
-export const analytics = typeof window !== "undefined" ? getAnalytics(app) : null; // ✅ Fix for Next.js SSR
+const auth = getAuth(app);
+const googleProvider = new GoogleAuthProvider(); // ✅ Added Google Sign-In Provider
 
+export { auth, googleProvider };
