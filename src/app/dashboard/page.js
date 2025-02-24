@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { auth } from "firebase/config";
 import { onAuthStateChanged, signOut } from "firebase/auth";
+import Chatbot from "../../components/Chatbot";
+
 import { useRouter } from "next/navigation";
 import { FiLogOut, FiHome, FiSettings, FiUser, FiBell, FiMoon, FiSun, FiBookOpen } from "react-icons/fi";
 
@@ -186,6 +188,8 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <Chatbot />
+
     </div>
   );
 }

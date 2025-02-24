@@ -6,6 +6,7 @@ import { collection, addDoc, getDocs, serverTimestamp } from "firebase/firestore
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
+import Chatbot from "../../components/Chatbot";
 import { FiLogOut, FiHome, FiSettings, FiUser, FiMoon, FiSun, FiPlus, FiSearch, FiPaperclip } from "react-icons/fi";
 
 export default function Blog() {
@@ -184,6 +185,8 @@ export default function Blog() {
           )}
         </div>
       </div>
+      <Chatbot />
+
     </div>
   );
 }
